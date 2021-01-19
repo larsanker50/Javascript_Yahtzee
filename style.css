@@ -18,3 +18,7 @@ th {
 h1 {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.tmpLocked {
+    background-color: brown;
+}
