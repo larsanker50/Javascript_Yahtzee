@@ -55,12 +55,12 @@ function updateDobbelArrayTwo() {
 };
 
 function updatePartOne() {
-  document.getElementsByClassName("ones")[0].innerHTML = worp[1];
-  document.getElementsByClassName("twos")[0].innerHTML = (worp[2] * 2);
-  document.getElementsByClassName("threes")[0].innerHTML = (worp[3] * 3);
-  document.getElementsByClassName("fours")[0].innerHTML = (worp[4] * 4);
-  document.getElementsByClassName("fives")[0].innerHTML = (worp[5] * 5);
-  document.getElementsByClassName("sixes")[0].innerHTML = (worp[6] * 6);
+  document.getElementsByClassName("numbers")[0].innerHTML = worp[1];
+  document.getElementsByClassName("numbers")[1].innerHTML = (worp[2] * 2);
+  document.getElementsByClassName("numbers")[2].innerHTML = (worp[3] * 3);
+  document.getElementsByClassName("numbers")[3].innerHTML = (worp[4] * 4);
+  document.getElementsByClassName("numbers")[4].innerHTML = (worp[5] * 5);
+  document.getElementsByClassName("numbers")[5].innerHTML = (worp[6] * 6);
 
 };
 
@@ -70,14 +70,16 @@ document.getElementsByClassName("carre")[0].innerHTML = (worp[1] + (worp[2] * 2)
 document.getElementsByClassName("chance")[0].innerHTML = (worp[1] + (worp[2] * 2) + (worp[3] * 3) + (worp[4] * 4) + (worp[5] * 5) + (worp[6] * 6));
 ;}
 
-function updateLocked() {
-  console.log("test")
-  document.getElementsByClassName("ones")[0].classList.toggle("tmpLocked");
-}
+// hier dus iets mee doen dat alleen één templock krijg als class. anders aparte id gebruiken voor elke ofso
 
-// ik moet de updatelocked zo maken dat hij alleen het element veranderd waar ik op klik naar de nieuwe class
+//function tempLock(i) {
+  //document.getElementsByClassName("numbers")[i].classList.add("tmpLocked");
+  //document.getElementsByClassName("tmpLocked")[i].classList.remove("numbers");
+ // console.log(document.getElementsByClassName("numbers")[i].classList.item)
+//}
 
-  
-  
-  
+  //for (let t = 0 ; t < 9; t++) {
+  //  document.getElementsByClassName("tmpLocked")[t].classList.remove("tmpLocked");
+  //};
+
 
