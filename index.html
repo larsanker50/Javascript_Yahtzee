@@ -20,45 +20,45 @@
           <tr>
             <td>enen</td>
             <td>tel alle enen op</td>
-            <td class="numbers"></td>
+            <td onclick="updateNumbers(); classList.add(`tmpLocked`); classList.remove(`numbers`)" class="numbers ones"></td>
           </tr>
           <tr>
             <td>tweeën</td>
             <td>tel alle tweeën op</td>
-            <td class="numbers"></td>
+            <td onclick="updateNumbers(); classList.add(`tmpLocked`); classList.remove(`numbers`)" class="numbers twos"></td>
           </tr>
           <tr>
             <td>driën</td>
             <td>tel alle driën op</td>
-            <td class="numbers"></td>
+            <td onclick="updateNumbers(); classList.add(`tmpLocked`); classList.remove(`numbers`)" class="numbers threes"></td>
           </tr>
           <tr>
             <td>vieren</td>
             <td>tel alle vieren op</td>
-            <td class="numbers"></td>
+            <td onclick="updateNumbers(); classList.add(`tmpLocked`); classList.remove(`numbers`)" class="numbers fours"></td>
           </tr>
           <tr>
             <td>vijfen</td>
             <td>tel alle vijfen op</td>
-            <td class="numbers"></td>
+            <td onclick="updateNumbers(); classList.add(`tmpLocked`); classList.remove(`numbers`)" class="numbers fives"></td>
           </tr>
           <tr>
             <td>zessen</td>
             <td>tel alle zessen op</td>
-            <td class="numbers"></td>
+            <td onclick="updateNumbers(); classList.add(`tmpLocked`); classList.remove(`numbers`)" class="numbers sixes"></td>
           </tr>
           <tr>
             <td colspan="2">totaal aantal punten</td>
-            <td class="totalNumbers"></td>
+            <td id="totalNumbers">0</td>
           </tr>
           <tr>
             <td>extra bonus (als puntentotaal 63 of meer is)</td>
             <td>35 punten</td>
-            <td class="bonus"></td>
+            <td id="bonus"></td>
           </tr>
           <tr>
             <td colspan="2">totaal van de bovenste helft</td>
-            <td class="totalPartOne"></td>
+            <td id="totalPartOne"></td>
           </tr>
           <tr>
             <td colspan="3"><b>deel 2</b></td>
@@ -66,49 +66,49 @@
           <tr>
             <td>three of a kind</td>
             <td>totaal v.d. 5 stenen</td>
-            <td onclick="classList.toggle(`tmpLocked`);" class="threeOfAKind"></td>
+            <td onclick="updateNumbers(); classList.add(`tmpLocked`); classList.remove(`numbers`)" class="numbers threeOfAKind"></td>
           </tr>
           <tr>
             <td>carré</td>
             <td>totaal v.d. 5 stenen</td>
-            <td onclick="classList.toggle(`tmpLocked`);" class="carre"></td>
+            <td onclick="updateNumbers(); classList.add(`tmpLocked`); classList.remove(`numbers`)" class="numbers carre"></td>
           </tr>
           <tr>
             <td>full house</td>
             <td>25 punten</td>
-            <td onclick="classList.toggle(`tmpLocked`);" class="fullHouse">25</td>
+            <td onclick="updateNumbers(); classList.add(`tmpLocked`); classList.remove(`numbers`)" class="numbers fullHouse">25</td>
           </tr>
           <tr>
             <td>kleine straat</td>
             <td>30 punten</td>
-            <td onclick="classList.toggle(`tmpLocked`);" class="kleineStraat">30</td>
+            <td onclick="updateNumbers(); classList.add(`tmpLocked`); classList.remove(`numbers`)" class="numbers kleineStraat">30</td>
           </tr>
           <tr>
             <td>grote straat</td>
             <td>40 punten</td>
-            <td onclick="classList.toggle(`tmpLocked`);" class="groteStraat">40</td>
+            <td onclick="updateNumbers(); classList.add(`tmpLocked`); classList.remove(`numbers`)" class="numbers groteStraat">40</td>
           </tr>
           <tr>
             <td>yahtzee</td>
             <td>50 punten</td>
-            <td onclick="classList.toggle(`tmpLocked`);" class="yahtzee">50</td>
+            <td onclick="updateNumbers(); classList.add(`tmpLocked`); classList.remove(`numbers`)" class="numbers yahtzee">50</td>
           </tr>
           <tr>
             <td>chance</td>
             <td>totaal v.d. 5 stenen</td>
-            <td onclick="classList.toggle(`tmpLocked`);" class="chance"></td>
+            <td onclick="updateNumbers(); classList.add(`tmpLocked`); classList.remove(`numbers`)" class="numbers chance"></td>
           </tr>
           <tr>
             <td colspan="2">totaal deel 2</td>
-            <td class="totalPartTwo"></td>
+            <td id="totalPartTwo"></td>
           </tr>
           <tr>
             <td colspan="2">totaal deel 1</td>
-            <td class="totalPartOne"></td>
+            <td id="totalPartOne"></td>
           </tr>
           <tr>
             <td colspan="2">totaal</td>
-            <td class="totalOneTwo"></td>
+            <td id="totalOnePlusTwo"></td>
           </tr>
         </tbody>
     </table>
