@@ -22,3 +22,7 @@ h1 {
 .tmpLocked {
     background-color: brown;
 }
+
+.locked {
+    background-color: rgb(147, 147, 255);
+}
