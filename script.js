@@ -1,5 +1,8 @@
 const button = document.getElementById("button");
 const dobbelArrayHTML = document.getElementsByClassName("dobbelArrayOne");
+const lockedOne = document.getElementsByClassName("lockedOne");
+const lockedTwo = document.getElementsByClassName("lockedTwo");
+
 let worp = {
   1: 0,
   2: 0,
@@ -35,8 +38,12 @@ function dobbel() {
     updateDobbelArrayTwo();
     updatePartOne();
     updatePartTwo();
-    updateLocked();
-    updateTotalNumbers()
+    updateLockedOne();
+    updateLockedTwo();
+    updateTotalNumbers();
+    updateBonus();
+    updateTotalPartOne();
+    updateTotalPartTwo();
     return dobbelArray;
   }
 
@@ -58,73 +65,135 @@ function updateDobbelArrayTwo() {
 
 function updatePartOne() {
   if (document.body.contains(document.getElementsByClassName("ones")[0]) == true)
-  if (document.getElementsByClassName("ones")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+  if (document.getElementsByClassName("ones")[0].contains(document.getElementsByClassName("tmpLockedOne")[0]) == false){
     document.getElementsByClassName("ones")[0].innerHTML = worp[1];
   };
   if (document.body.contains(document.getElementsByClassName("twos")[0]) == true)
-  if (document.getElementsByClassName("twos")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+  if (document.getElementsByClassName("twos")[0].contains(document.getElementsByClassName("tmpLockedOne")[0]) == false){
     document.getElementsByClassName("twos")[0].innerHTML = (worp[2] * 2);
   };
   if (document.body.contains(document.getElementsByClassName("threes")[0]) == true)
-  if (document.getElementsByClassName("threes")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+  if (document.getElementsByClassName("threes")[0].contains(document.getElementsByClassName("tmpLockedOne")[0]) == false){
     document.getElementsByClassName("threes")[0].innerHTML = (worp[3] * 3);
   };
   if (document.body.contains(document.getElementsByClassName("fours")[0]) == true)
-  if (document.getElementsByClassName("fours")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+  if (document.getElementsByClassName("fours")[0].contains(document.getElementsByClassName("tmpLockedOne")[0]) == false){
     document.getElementsByClassName("fours")[0].innerHTML = (worp[4] * 4);
   };
   if (document.body.contains(document.getElementsByClassName("fives")[0]) == true)
-  if (document.getElementsByClassName("fives")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+  if (document.getElementsByClassName("fives")[0].contains(document.getElementsByClassName("tmpLockedOne")[0]) == false){
     document.getElementsByClassName("fives")[0].innerHTML = (worp[5] * 5);
   };
   if (document.body.contains(document.getElementsByClassName("sixes")[0]) == true)
-  if (document.getElementsByClassName("sixes")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+  if (document.getElementsByClassName("sixes")[0].contains(document.getElementsByClassName("tmpLockedOne")[0]) == false){
     document.getElementsByClassName("sixes")[0].innerHTML = (worp[6] * 6);
   };
 };
 
 function updatePartTwo() {
   if (document.body.contains(document.getElementsByClassName("threeOfAKind")[0]) == true)
-  if (document.getElementsByClassName("threeOfAKind")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+  if (document.getElementsByClassName("threeOfAKind")[0].contains(document.getElementsByClassName("tmpLockedTwo")[0]) == false){
     document.getElementsByClassName("threeOfAKind")[0].innerHTML = (worp[1] + (worp[2] * 2) + (worp[3] * 3) + (worp[4] * 4) + (worp[5] * 5) + (worp[6] * 6));
   };
   if (document.body.contains(document.getElementsByClassName("carre")[0]) == true)
-  if (document.getElementsByClassName("carre")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+  if (document.getElementsByClassName("carre")[0].contains(document.getElementsByClassName("tmpLockedTwo")[0]) == false){
     document.getElementsByClassName("carre")[0].innerHTML = (worp[1] + (worp[2] * 2) + (worp[3] * 3) + (worp[4] * 4) + (worp[5] * 5) + (worp[6] * 6));
   };
   if (document.body.contains(document.getElementsByClassName("chance")[0]) == true)
-  if (document.getElementsByClassName("chance")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+  if (document.getElementsByClassName("chance")[0].contains(document.getElementsByClassName("tmpLockedTwo")[0]) == false){
     document.getElementsByClassName("chance")[0].innerHTML = (worp[1] + (worp[2] * 2) + (worp[3] * 3) + (worp[4] * 4) + (worp[5] * 5) + (worp[6] * 6));
   };
 ;}
 
-function updateNumbers() {
-  if (document.body.contains(document.getElementsByClassName("tmpLocked")[0]) == true){
-    document.getElementsByClassName("tmpLocked")[0].classList.add("numbers");
-    document.getElementsByClassName("tmpLocked")[0].classList.remove("tmpLocked");
+function updateNumbersOne() {
+  if (document.body.contains(document.getElementsByClassName("tmpLockedOne")[0]) == true){
+    document.getElementsByClassName("tmpLockedOne")[0].classList.add("numbers");
+    document.getElementsByClassName("tmpLockedOne")[0].classList.remove("tmpLockedOne");
   } else {
   }
 }
 
-function updateLocked() {
-  if (document.body.contains(document.getElementsByClassName("tmpLocked")[0]) == true){
-    document.getElementsByClassName("tmpLocked")[0].classList.add("locked");
-    document.getElementsByClassName("tmpLocked")[0].classList.remove("ones");
-    document.getElementsByClassName("tmpLocked")[0].classList.remove("twos");
-    document.getElementsByClassName("tmpLocked")[0].classList.remove("threes");
-    document.getElementsByClassName("tmpLocked")[0].classList.remove("fours");
-    document.getElementsByClassName("tmpLocked")[0].classList.remove("fives");
-    document.getElementsByClassName("tmpLocked")[0].classList.remove("sixes");
-    document.getElementsByClassName("tmpLocked")[0].classList.remove("threeOfAKind");
-    document.getElementsByClassName("tmpLocked")[0].classList.remove("carre");
-    document.getElementsByClassName("tmpLocked")[0].classList.remove("chance");
-    document.getElementsByClassName("tmpLocked")[0].classList.remove("tmpLocked");
-    console.log("updateTrue")
+function updateNumbersTwo() {
+  if (document.body.contains(document.getElementsByClassName("tmpLockedTwo")[0]) == true){
+    document.getElementsByClassName("tmpLockedTwo")[0].classList.add("numbers");
+    document.getElementsByClassName("tmpLockedTwo")[0].classList.remove("tmpLockedTwo");
   } else {
-    console.log("updateFalse")
+  }
+}
+
+function updateLockedOne() {
+  if (document.body.contains(document.getElementsByClassName("tmpLockedOne")[0]) == true){
+    document.getElementsByClassName("tmpLockedOne")[0].classList.add("lockedOne");
+    document.getElementsByClassName("tmpLockedOne")[0].classList.remove("ones");
+    document.getElementsByClassName("tmpLockedOne")[0].classList.remove("twos");
+    document.getElementsByClassName("tmpLockedOne")[0].classList.remove("threes");
+    document.getElementsByClassName("tmpLockedOne")[0].classList.remove("fours");
+    document.getElementsByClassName("tmpLockedOne")[0].classList.remove("fives");
+    document.getElementsByClassName("tmpLockedOne")[0].classList.remove("sixes");
+    document.getElementsByClassName("tmpLockedOne")[0].classList.remove("tmpLockedOne");
+  } else {
 }};
 
-function updateTotalNumbers() {
-// deze functie scrhijven
-  
+function updateLockedTwo() {
+  if (document.body.contains(document.getElementsByClassName("tmpLockedTwo")[0]) == true) {
+    document.getElementsByClassName("tmpLockedTwo")[0].classList.add("lockedTwo");
+    document.getElementsByClassName("tmpLockedTwo")[0].classList.remove("threeOfAKind");
+    document.getElementsByClassName("tmpLockedTwo")[0].classList.remove("carre");
+    document.getElementsByClassName("tmpLockedTwo")[0].classList.remove("chance");
+    document.getElementsByClassName("tmpLockedTwo")[0].classList.remove("tmpLockedTwo");
+  }
 }
+
+function updateTotalNumbers() {
+  if (document.body.contains(document.getElementsByClassName("lockedOne")[5]) == true){
+    document.getElementById("totalNumbers").innerHTML = (+lockedOne[0].innerHTML + +lockedOne[1].innerHTML + +lockedOne[2].innerHTML + +lockedOne[3].innerHTML + +lockedOne[4].innerHTML  + +lockedOne[5].innerHTML)
+  } else if (document.body.contains(document.getElementsByClassName("lockedOne")[4]) == true){
+    document.getElementById("totalNumbers").innerHTML = (+lockedOne[0].innerHTML + +lockedOne[1].innerHTML + +lockedOne[2].innerHTML + +lockedOne[3].innerHTML + +lockedOne[4].innerHTML)
+  } else if (document.body.contains(document.getElementsByClassName("lockedOne")[3]) == true){
+    document.getElementById("totalNumbers").innerHTML = (+lockedOne[0].innerHTML + +lockedOne[1].innerHTML + +lockedOne[2].innerHTML + +lockedOne[3].innerHTML)
+  } else if (document.body.contains(document.getElementsByClassName("lockedOne")[2]) == true){
+    document.getElementById("totalNumbers").innerHTML = (+lockedOne[0].innerHTML + +lockedOne[1].innerHTML + +lockedOne[2].innerHTML)
+  } else if (document.body.contains(document.getElementsByClassName("lockedOne")[1]) == true){
+    document.getElementById("totalNumbers").innerHTML = (+lockedOne[0].innerHTML + +lockedOne[1].innerHTML)
+  } else if (document.body.contains(document.getElementsByClassName("lockedOne")[0]) == true){
+    document.getElementById("totalNumbers").innerHTML = (+lockedOne[0].innerHTML)
+  } else {
+    document.getElementById("totalNumbers").innerHTML = 0
+  };
+};
+
+function updateBonus(){
+  if (document.getElementById("totalNumbers").innerHTML >= 63) {
+    document.getElementById("bonus").innerHTML = 35
+  } else {
+    document.getElementById("bonus").innerHTML = 0
+  };
+};
+
+function updateTotalPartOne() {
+  let math = (+document.getElementById("bonus").innerHTML + +document.getElementById("totalNumbers").innerHTML);
+  document.getElementsByClassName("totalPartOne")[0].innerHTML = math;
+  document.getElementsByClassName("totalPartOne")[1].innerHTML = math;
+}
+
+function updateTotalPartTwo() {
+  if (document.body.contains(document.getElementsByClassName("lockedTwo")[6]) == true){
+    document.getElementById("totalPartTwo").innerHTML = (+lockedTwo[0].innerHTML + +lockedTwo[1].innerHTML + +lockedTwo[2].innerHTML + +lockedTwo[3].innerHTML + lockedTwo[4].innerHTML  + +lockedTwo[5].innerHTML  + +lockedTwo[6].innerHTML)
+  } else if (document.body.contains(document.getElementsByClassName("lockedTwo")[5]) == true){
+    document.getElementById("totalPartTwo").innerHTML = (+lockedTwo[0].innerHTML + +lockedTwo[1].innerHTML + +lockedTwo[2].innerHTML + +lockedTwo[3].innerHTML + lockedTwo[4].innerHTML  + +lockedTwo[5].innerHTML)
+  } else if (document.body.contains(document.getElementsByClassName("lockedTwo")[4]) == true){
+    document.getElementById("totalPartTwo").innerHTML = (+lockedTwo[0].innerHTML + +lockedTwo[1].innerHTML + +lockedTwo[2].innerHTML + +lockedTwo[3].innerHTML + +lockedTwo[4].innerHTML)
+  } else if (document.body.contains(document.getElementsByClassName("lockedTwo")[3]) == true){
+    document.getElementById("totalPartTwo").innerHTML = (+lockedTwo[0].innerHTML + +lockedTwo[1].innerHTML + +lockedTwo[2].innerHTML + +lockedTwo[3].innerHTML)
+  } else if (document.body.contains(document.getElementsByClassName("lockedTwo")[2]) == true){
+    document.getElementById("totalPartTwo").innerHTML = (+lockedTwo[0].innerHTML + +lockedTwo[1].innerHTML + +lockedTwo[2].innerHTML)
+  } else if (document.body.contains(document.getElementsByClassName("lockedTwo")[1]) == true){
+    document.getElementById("totalPartTwo").innerHTML = (+lockedTwo[0].innerHTML + +lockedTwo[1].innerHTML)
+  } else if (document.body.contains(document.getElementsByClassName("lockedTwo")[0]) == true){
+    document.getElementById("totalPartTwo").innerHTML = (+lockedTwo[0].innerHTML)
+  } else {
+    document.getElementById("totalPartTwo").innerHTML = 0
+
+   // hier gaat nog iets mis. bij de laatste paar keer gooien krijg ik een vreemd getal.
+    };
+};
