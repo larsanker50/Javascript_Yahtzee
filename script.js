@@ -35,6 +35,8 @@ function dobbel() {
     updateDobbelArrayTwo();
     updatePartOne();
     updatePartTwo();
+    updateLocked();
+    updateTotalNumbers()
     return dobbelArray;
   }
 
@@ -55,31 +57,74 @@ function updateDobbelArrayTwo() {
 };
 
 function updatePartOne() {
-  document.getElementsByClassName("numbers")[0].innerHTML = worp[1];
-  document.getElementsByClassName("numbers")[1].innerHTML = (worp[2] * 2);
-  document.getElementsByClassName("numbers")[2].innerHTML = (worp[3] * 3);
-  document.getElementsByClassName("numbers")[3].innerHTML = (worp[4] * 4);
-  document.getElementsByClassName("numbers")[4].innerHTML = (worp[5] * 5);
-  document.getElementsByClassName("numbers")[5].innerHTML = (worp[6] * 6);
-
+  if (document.body.contains(document.getElementsByClassName("ones")[0]) == true)
+  if (document.getElementsByClassName("ones")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+    document.getElementsByClassName("ones")[0].innerHTML = worp[1];
+  };
+  if (document.body.contains(document.getElementsByClassName("twos")[0]) == true)
+  if (document.getElementsByClassName("twos")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+    document.getElementsByClassName("twos")[0].innerHTML = (worp[2] * 2);
+  };
+  if (document.body.contains(document.getElementsByClassName("threes")[0]) == true)
+  if (document.getElementsByClassName("threes")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+    document.getElementsByClassName("threes")[0].innerHTML = (worp[3] * 3);
+  };
+  if (document.body.contains(document.getElementsByClassName("fours")[0]) == true)
+  if (document.getElementsByClassName("fours")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+    document.getElementsByClassName("fours")[0].innerHTML = (worp[4] * 4);
+  };
+  if (document.body.contains(document.getElementsByClassName("fives")[0]) == true)
+  if (document.getElementsByClassName("fives")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+    document.getElementsByClassName("fives")[0].innerHTML = (worp[5] * 5);
+  };
+  if (document.body.contains(document.getElementsByClassName("sixes")[0]) == true)
+  if (document.getElementsByClassName("sixes")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+    document.getElementsByClassName("sixes")[0].innerHTML = (worp[6] * 6);
+  };
 };
 
 function updatePartTwo() {
-document.getElementsByClassName("threeOfAKind")[0].innerHTML = (worp[1] + (worp[2] * 2) + (worp[3] * 3) + (worp[4] * 4) + (worp[5] * 5) + (worp[6] * 6));
-document.getElementsByClassName("carre")[0].innerHTML = (worp[1] + (worp[2] * 2) + (worp[3] * 3) + (worp[4] * 4) + (worp[5] * 5) + (worp[6] * 6));
-document.getElementsByClassName("chance")[0].innerHTML = (worp[1] + (worp[2] * 2) + (worp[3] * 3) + (worp[4] * 4) + (worp[5] * 5) + (worp[6] * 6));
+  if (document.body.contains(document.getElementsByClassName("threeOfAKind")[0]) == true)
+  if (document.getElementsByClassName("threeOfAKind")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+    document.getElementsByClassName("threeOfAKind")[0].innerHTML = (worp[1] + (worp[2] * 2) + (worp[3] * 3) + (worp[4] * 4) + (worp[5] * 5) + (worp[6] * 6));
+  };
+  if (document.body.contains(document.getElementsByClassName("carre")[0]) == true)
+  if (document.getElementsByClassName("carre")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+    document.getElementsByClassName("carre")[0].innerHTML = (worp[1] + (worp[2] * 2) + (worp[3] * 3) + (worp[4] * 4) + (worp[5] * 5) + (worp[6] * 6));
+  };
+  if (document.body.contains(document.getElementsByClassName("chance")[0]) == true)
+  if (document.getElementsByClassName("chance")[0].contains(document.getElementsByClassName("tmpLocked")[0]) == false){
+    document.getElementsByClassName("chance")[0].innerHTML = (worp[1] + (worp[2] * 2) + (worp[3] * 3) + (worp[4] * 4) + (worp[5] * 5) + (worp[6] * 6));
+  };
 ;}
 
-// hier dus iets mee doen dat alleen één templock krijg als class. anders aparte id gebruiken voor elke ofso
+function updateNumbers() {
+  if (document.body.contains(document.getElementsByClassName("tmpLocked")[0]) == true){
+    document.getElementsByClassName("tmpLocked")[0].classList.add("numbers");
+    document.getElementsByClassName("tmpLocked")[0].classList.remove("tmpLocked");
+  } else {
+  }
+}
 
-//function tempLock(i) {
-  //document.getElementsByClassName("numbers")[i].classList.add("tmpLocked");
-  //document.getElementsByClassName("tmpLocked")[i].classList.remove("numbers");
- // console.log(document.getElementsByClassName("numbers")[i].classList.item)
-//}
+function updateLocked() {
+  if (document.body.contains(document.getElementsByClassName("tmpLocked")[0]) == true){
+    document.getElementsByClassName("tmpLocked")[0].classList.add("locked");
+    document.getElementsByClassName("tmpLocked")[0].classList.remove("ones");
+    document.getElementsByClassName("tmpLocked")[0].classList.remove("twos");
+    document.getElementsByClassName("tmpLocked")[0].classList.remove("threes");
+    document.getElementsByClassName("tmpLocked")[0].classList.remove("fours");
+    document.getElementsByClassName("tmpLocked")[0].classList.remove("fives");
+    document.getElementsByClassName("tmpLocked")[0].classList.remove("sixes");
+    document.getElementsByClassName("tmpLocked")[0].classList.remove("threeOfAKind");
+    document.getElementsByClassName("tmpLocked")[0].classList.remove("carre");
+    document.getElementsByClassName("tmpLocked")[0].classList.remove("chance");
+    document.getElementsByClassName("tmpLocked")[0].classList.remove("tmpLocked");
+    console.log("updateTrue")
+  } else {
+    console.log("updateFalse")
+}};
 
-  //for (let t = 0 ; t < 9; t++) {
-  //  document.getElementsByClassName("tmpLocked")[t].classList.remove("tmpLocked");
-  //};
-
-
+function updateTotalNumbers() {
+// deze functie scrhijven
+  
+}
