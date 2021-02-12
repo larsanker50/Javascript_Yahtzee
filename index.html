@@ -1,164 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Yahtzee</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript Yahtzee</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Scoreblok</h1>
-    <table>
-        <thead>
-          <tr>
-            <th>Deel 1</th>
-            <th>Puntentelling</th>
-            <th>Punten</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>enen</td>
-            <td>tel alle enen op</td>
-            <td onclick="updateNumbers(); classList.add(`tmpLockedOne`); classList.remove(`numbers`)" class="numbers ones"></td>
-          </tr>
-          <tr>
-            <td>tweeën</td>
-            <td>tel alle tweeën op</td>
-            <td onclick="updateNumbers(); classList.add(`tmpLockedOne`); classList.remove(`numbers`)" class="numbers twos"></td>
-          </tr>
-          <tr>
-            <td>driën</td>
-            <td>tel alle driën op</td>
-            <td onclick="updateNumbers(); classList.add(`tmpLockedOne`); classList.remove(`numbers`)" class="numbers threes"></td>
-          </tr>
-          <tr>
-            <td>vieren</td>
-            <td>tel alle vieren op</td>
-            <td onclick="updateNumbers(); classList.add(`tmpLockedOne`); classList.remove(`numbers`)" class="numbers fours"></td>
-          </tr>
-          <tr>
-            <td>vijfen</td>
-            <td>tel alle vijfen op</td>
-            <td onclick="updateNumbers(); classList.add(`tmpLockedOne`); classList.remove(`numbers`)" class="numbers fives"></td>
-          </tr>
-          <tr>
-            <td>zessen</td>
-            <td>tel alle zessen op</td>
-            <td onclick="updateNumbers(); classList.add(`tmpLockedOne`); classList.remove(`numbers`)" class="numbers sixes"></td>
-          </tr>
-          <tr>
-            <td colspan="2">totaal aantal punten</td>
-            <td id="totalNumbers">0</td>
-          </tr>
-          <tr>
-            <td>extra bonus (als puntentotaal 63 of meer is)</td>
-            <td>35 punten</td>
-            <td id="bonus"></td>
-          </tr>
-          <tr>
-            <td colspan="2">totaal van de bovenste helft</td>
-            <td class="totalPartOne"></td>
-          </tr>
-          <tr>
-            <td colspan="3"><b>deel 2</b></td>
-          </tr>
-          <tr>
-            <td>three of a kind</td>
-            <td>totaal v.d. 5 stenen</td>
-            <!-- TODO: eventlistners in js file toevoegen, en je kunt dit via de onclick event op de table afhandelen, dat scheelt coderegels -->
-            <td onclick="updateNumbers(); classList.add(`tmpLockedTwo`); classList.remove(`numbers`)" class="numbers threeOfAKind"></td>
-          </tr>
-          <tr>
-            <td>carré</td>
-            <td>totaal v.d. 5 stenen</td>
-            <td onclick="updateNumbers(); classList.add(`tmpLockedTwo`); classList.remove(`numbers`)" class="numbers carre"></td>
-          </tr>
-          <tr>
-            <td>full house</td>
-            <td>25 punten</td>
-            <td onclick="updateNumbers(); classList.add(`tmpLockedTwo`); classList.remove(`numbers`)" class="numbers fullHouse">25</td>
-          </tr>
-          <tr>
-            <td>kleine straat</td>
-            <td>30 punten</td>
-            <td onclick="updateNumbers(); classList.add(`tmpLockedTwo`); classList.remove(`numbers`)" class="numbers kleineStraat">30</td>
-          </tr>
-          <tr>
-            <td>grote straat</td>
-            <td>40 punten</td>
-            <td onclick="updateNumbers(); classList.add(`tmpLockedTwo`); classList.remove(`numbers`)" class="numbers groteStraat">40</td>
-          </tr>
-          <tr>
-            <td>yahtzee</td>
-            <td>50 punten</td>
-            <td onclick="updateNumbers(); classList.add(`tmpLockedTwo`); classList.remove(`numbers`)" class="numbers yahtzee">50</td>
-          </tr>
-          <tr>
-            <td>chance</td>
-            <td>totaal v.d. 5 stenen</td>
-            <td onclick="updateNumbers(); classList.add(`tmpLockedTwo`); classList.remove(`numbers`)" class="numbers chance"></td>
-          </tr>
-          <tr>
-            <td colspan="2">totaal deel 2</td>
-            <td id="totalPartTwo"></td>
-          </tr>
-          <tr>
-            <td colspan="2">totaal deel 1</td>
-            <td class="totalPartOne"></td>
-          </tr>
-          <tr>
-            <td colspan="2">totaal</td>
-            <td id="totalOnePlusTwo"></td>
-          </tr>
-        </tbody>
-    </table>
-    </br>
-    <button id="btnThrowDices">Gooien!</button>
+  <h1>Scoreblok</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Deel 1</th>
+        <th>Puntentelling</th>
+        <th>Punten</th>
+      </tr>
+    </thead>
+    <tbody id="partOne" onclick="updateNumbersOne(event)">
+      <tr>
+        <td>enen</td>
+        <td>tel alle enen op</td>
+        <td class="numbers ones">
+        </td>
+      </tr>
+      <tr>
+        <td>tweeën</td>
+        <td>tel alle tweeën op</td>
+        <td class="numbers twos">
+        </td>
+      </tr>
+      <tr>
+        <td>driën</td>
+        <td>tel alle driën op</td>
+        <td class="numbers threes"></td>
+      </tr>
+      <tr>
+        <td>vieren</td>
+        <td>tel alle vieren op</td>
+        <td class="numbers fours">
+        </td>
+      </tr>
+      <tr>
+        <td>vijfen</td>
+        <td>tel alle vijfen op</td>
+        <td class="numbers fives">
+        </td>
+      </tr>
+      <tr>
+        <td>zessen</td>
+        <td>tel alle zessen op</td>
+        <td class="numbers sixes">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">totaal aantal punten</td>
+        <td id="totalNumbers">0</td>
+      </tr>
+      <tr>
+        <td>extra bonus (als puntentotaal 63 of meer is)</td>
+        <td>35 punten</td>
+        <td id="bonus"></td>
+      </tr>
+      <tr>
+        <td colspan="2">totaal van de bovenste helft</td>
+        <td class="totalPartOne"></td>
+      </tr>
+    </tbody>
+    <tbody id="partTwo" onclick="updateNumbersTwo(event)">
+      <tr>
+        <td colspan="3"><b>deel 2</b></td>
+      </tr>
+      <tr>
+        <td>three of a kind</td>
+        <td>totaal v.d. 5 stenen</td>
+        <td class="numbers threeOfAKind"></td>
+      </tr>
+      <tr>
+        <td>carré</td>
+        <td>totaal v.d. 5 stenen</td>
+        <td class="numbers carre">
+        </td>
+      </tr>
+      <tr>
+        <td>full house</td>
+        <td>25 punten</td>
+        <td class="numbers fullHouse">25</td>
+      </tr>
+      <tr>
+        <td>kleine straat</td>
+        <td>30 punten</td>
+        <td class="numbers kleineStraat">30</td>
+      </tr>
+      <tr>
+        <td>grote straat</td>
+        <td>40 punten</td>
+        <td class="numbers groteStraat">40</td>
+      </tr>
+      <tr>
+        <td>yahtzee</td>
+        <td>50 punten</td>
+        <td class="numbers yahtzee">50</td>
+      </tr>
+      <tr>
+        <td>chance</td>
+        <td>totaal v.d. 5 stenen</td>
+        <td class="numbers chance"></td>
+      </tr>
+      <tr>
+        <td colspan="2">totaal deel 2</td>
+        <td id="totalPartTwo"></td>
+      </tr>
+      <tr>
+        <td colspan="2">totaal deel 1</td>
+        <td class="totalPartOne"></td>
+      </tr>
+      <tr>
+        <td colspan="2">totaal</td>
+        <td id="totalOnePlusTwo"></td>
+      </tr>
+    </tbody>
+  </table>
+  </br>
+  <button id="btnThrowDices">Gooien!</button>
   </br>
   </br>
-    <table>
-        <tbody>
-          <tr>
-            <td class="dobbelArrayOne" ></td>
-            <td class="dobbelArrayOne" ></td>
-            <td class="dobbelArrayOne" ></td>
-            <td class="dobbelArrayOne" ></td>
-            <td class="dobbelArrayOne" ></td>
-          </tr>
-        </tbody>
-      </table>
-      </br>
-      <table>
-        <tr>
-            <th>Getal</th>
-            <th>Aantal</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td id="one"></td>
-        </tr>
-        <tr>
-            <td>2</td>
-             <td id="two"></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td id="three"></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td id="four"></td>
-        </tr>
-          <tr>
-            <td>5</td>
-            <td id="five"></td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td id="six"></td>
-        </tr>
-    </table>
-    <script type="text/javascript" src="script.js"></script>
+  <table>
+    <tbody>
+      <tr>
+        <td class="dobbelArrayOne"></td>
+        <td class="dobbelArrayOne"></td>
+        <td class="dobbelArrayOne"></td>
+        <td class="dobbelArrayOne"></td>
+        <td class="dobbelArrayOne"></td>
+      </tr>
+    </tbody>
+  </table>
+  </br>
+  <table>
+    <tr>
+      <th>Getal</th>
+      <th>Aantal</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td id="one"></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td id="two"></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td id="three"></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td id="four"></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td id="five"></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td id="six"></td>
+    </tr>
+  </table>
+  <script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>
